@@ -1,0 +1,129 @@
+a {
+    font-weight: bold;
+  }
+  
+  a:hover {
+    color: #1574B1;
+    cursor: pointer;
+  }
+  
+  .wrapper {
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .table {
+    width: 100%;
+    display: table;
+    border-bottom: none;
+    background-color: rgba(149, 218, 193, 0.69);
+  }
+  
+  .row {
+    display: table-row;
+  }
+  
+  .row.header {
+    color: #000;
+    background-color: rgba(57, 144, 113, 0.3);
+  }
+  
+  .row.header .cell {
+    width: 50%;
+    padding: 5px 10px 5px 10px;
+    display: table-cell;
+    vertical-align: middle;
+    font-weight: 500;
+    vertical-align: bottom;
+    border-bottom: 1px solid rgba(57, 144, 113, 0.54);
+  }
+  
+  .row.header .cell:nth-of-type(even) {
+    text-align: right;
+  }
+  
+  .row.header .cell a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .row.header .cell h1 {
+    margin: 0;
+    font-size: 87%;
+    display: inline;
+    color: #333;
+  }
+  
+  .row.header .cell h2 {
+    margin: 0;
+    font-size: 83%;
+    color: #777;
+  }
+  
+  .row.header .cell span.icon {
+    display: none;
+  }
+  
+  .row.header .cell.current {
+    background: #EFEFEF;
+  }
+  
+  .row.header .cell.current span.icon {
+    display: inline;
+    font-size: 77%;
+    color: #1574B1;
+  }
+  
+  
+  .row.data .cell {
+    width: 50%;
+    padding: 5px 10px 5px 10px;
+    display: table-cell;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(57, 144, 113, 0.54);
+    font-weight: 500;
+  }
+  
+  .row.data .cell:nth-of-type(even) {
+    text-align: right;
+  }
+  
+  .row.data .cell span {
+    display: block;
+    color: #393939;
+  }
+  
+  .row.data .cell span+span {
+    font-size: 83%;
+    color: #777;
+  }
+  
+  .row.data .cell span+span.positive {
+    color: #37B15A;
+  }
+  
+  .row.data .cell span+span.negative {
+    color: #FF2C3C;
+  }
+  
+  .row.data .cell+.cell {
+    border-left: none;
+  }
+  
+  .row.footer {
+    caption-side: bottom;
+    display: table-caption;
+    text-align: center;
+    border-top: none;
+    margin: 0px;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  .row.footer a {
+    font-weight: normal;
+  }

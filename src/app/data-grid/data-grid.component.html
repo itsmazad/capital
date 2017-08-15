@@ -1,3 +1,126 @@
-<p>
-  data-grid works!
-</p>
+<div class="wrapper">
+  <div class="table">
+    <div class="row header">
+      <div class="cell" [ngClass]="{'current': sIndex == 'name'}">
+        <a (click) = "sort('name')">
+          <h1>Account</h1>
+          <span class="icon glyphicon" [ngClass]="{'glyphicon-chevron-down': sOrder == 'asc', 'glyphicon-chevron-up': sOrder == 'desc' }" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="cell" [ngClass]="{'current': sIndex == 'value'}">
+        <a (click) = "sort('value')">
+          <span class="icon glyphicon" [ngClass]="{'glyphicon-chevron-down': sOrder == 'asc', 'glyphicon-chevron-up': sOrder == 'desc' }" aria-hidden="true"></span>
+          <h1>Available Cash</h1>
+          <h2>Today's Change</h2>
+        </a>
+      </div>
+    </div>
+    <div *ngFor="let item of accounts" class="row data">
+      <div class="cell">
+        <a>{{item.name}}</a>
+      </div>
+      <div class="cell">
+        <span>{{item.value | currency:'USD':true:'1.2-2'}}</span>
+        <span [ngClass]="{'positive': item.chngPct > 0, 'negative': item.chngPct < 0 }">
+          {{item.chngPct | number:'.2-2'}}% / {{item.chngVal | currency:'USD':true:'1.2-2'}}
+        </span>
+      </div>
+    </div>
+    <div class="row data">
+      <div class="cell">
+        <a>Acc-101</a>
+      </div>
+      <div class="cell">
+        <span>$9,999.00</span>
+        <span class="negative" ng-reflect-ng-class="[object Object]">
+          -0.10% / $111.00
+        </span>
+      </div>
+    </div><div class="row data">
+      <div class="cell">
+        <a>Acc-202</a>
+      </div>
+      <div class="cell">
+        <span>$888.00</span>
+        <span ng-reflect-ng-class="[object Object]">
+          0.00% / $0.00
+        </span>
+      </div>
+    </div><div class="row data">
+      <div class="cell">
+        <a>Acc-303</a>
+      </div>
+      <div class="cell">
+        <span>$77.00</span>
+        <span class="positive" ng-reflect-ng-class="[object Object]">
+          +0.12% / $111.00
+        </span>
+      </div>
+    </div>
+    <div class="row data">
+      <div class="cell">
+        <a>Acc-101</a>
+      </div>
+      <div class="cell">
+        <span>$9,999.00</span>
+        <span class="negative" ng-reflect-ng-class="[object Object]">
+          -0.10% / $111.00
+        </span>
+      </div>
+    </div><div class="row data">
+      <div class="cell">
+        <a>Acc-202</a>
+      </div>
+      <div class="cell">
+        <span>$888.00</span>
+        <span ng-reflect-ng-class="[object Object]">
+          0.00% / $0.00
+        </span>
+      </div>
+    </div><div class="row data">
+      <div class="cell">
+        <a>Acc-303</a>
+      </div>
+      <div class="cell">
+        <span>$77.00</span>
+        <span class="positive" ng-reflect-ng-class="[object Object]">
+          +0.12% / $111.00
+        </span>
+      </div>
+    </div>
+    <div class="row data">
+      <div class="cell">
+        <a>Acc-101</a>
+      </div>
+      <div class="cell">
+        <span>$9,999.00</span>
+        <span class="negative" ng-reflect-ng-class="[object Object]">
+          -0.10% / $111.00
+        </span>
+      </div>
+    </div><div class="row data">
+      <div class="cell">
+        <a>Acc-202</a>
+      </div>
+      <div class="cell">
+        <span>$888.00</span>
+        <span ng-reflect-ng-class="[object Object]">
+          0.00% / $0.00
+        </span>
+      </div>
+    </div><div class="row data">
+      <div class="cell">
+        <a>Acc-303</a>
+      </div>
+      <div class="cell">
+        <span>$77.00</span>
+        <span class="positive" ng-reflect-ng-class="[object Object]">
+          +0.12% / $111.00
+        </span>
+      </div>
+    </div>
+    <div class="row footer" [ngClass]="{'row footer': next, 'hidden': !next}">
+      <a (click)="nextPage()">Load more</a>
+    </div>
+  </div>
+</div>
